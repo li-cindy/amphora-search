@@ -12,7 +12,11 @@ general:
       index: not_analyzed
     authors:
       type: string
-      index: not_analyzed
+      analyzer: standard
+      fields:
+        english:
+          type: string
+          analyzer: std_english
     published:
       type: boolean
       index: not_analyzed
@@ -34,3 +38,5 @@ general:
     siteSlug:
       type: string
       index: not_analyzed
+        
+    
