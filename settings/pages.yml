@@ -1,0 +1,6 @@
+settings:
+  analysis:
+    analyzer:
+      std_english:
+        type: standard
+        stopwords: _english_

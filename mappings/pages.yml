@@ -1,42 +1,42 @@
-general:
-  dynamic: strict
-  properties:
-    createdAt:
-      type: date
-    title:
-      type: string
-      index: analyzed
-      analyzer: simple
-    titleTruncated:
-      type: string
-      index: not_analyzed
-    authors:
-      type: string
-      analyzer: standard
-      fields:
-        english:
-          type: string
-          analyzer: std_english
-    published:
-      type: boolean
-      index: not_analyzed
-    scheduled:
-      type: boolean
-      index: not_analyzed
-    scheduledTime:
-      type: date
-    publishTime:
-      type: date
-    updateTime:
-      type: date
-    url:
-      type: string
-      index: not_analyzed
-    uri:
-      type: string
-      index: not_analyzed
-    siteSlug:
-      type: string
-      index: not_analyzed
-        
-    
+mappings:
+  general:
+    dynamic: strict
+    properties:
+      authors:
+        type: string
+        analyzer: standard
+        fields:
+          english:
+            type: string
+            analyzer: std_english
+      createdAt:
+        type: date
+        format: strict_date_optional_time||epoch_millis
+      mainContent:
+        type: string
+        index: not_analyzed
+      publishTime:
+        type: string
+        index: not_analyzed
+      published:
+        type: boolean
+      scheduled:
+        type: boolean
+      scheduledTime:
+        type: string
+        index: not_analyzed
+      siteSlug:
+        type: string
+        index: not_analyzed
+      title:
+        type: string
+        analyzer: simple
+      titleTruncated:
+        type: string
+        index: not_analyzed
+      uri:
+        type: string
+        index: not_analyzed
+      url:
+        type: string
+        index: not_analyzed
